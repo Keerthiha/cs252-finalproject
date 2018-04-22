@@ -19,7 +19,7 @@ app.post("/", function(req,res){
 
     city = req.body.cityname;
     res.redirect("/r");
-    console.log(city) ; 
+    //console.log(city) ; 
 
 });
 
@@ -39,7 +39,7 @@ app.get("/r",function(req,res){
     
     //request.get('https://api.yelp.com/v3/businesses/search?term=restaurant&location=Chicago', {
       
-    console.log(city) ; 
+    //console.log(city) ; 
 
     url = 'https://api.yelp.com/v3/businesses/search?term=restaurant&location='+city ;
     
@@ -103,7 +103,7 @@ app.get("/r",function(req,res){
    
     
 });
-
-app.listen(1234, function(){
+var port = process.env.PORT || 1234;
+app.listen(port, function(){
     console.log("App has started!");
 });
