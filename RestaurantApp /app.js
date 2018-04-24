@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req,res){
 
-  res.render("home.ejs")
+    //console.log("logging get /");
+  res.render("home.ejs");
 
 });
 
@@ -94,15 +95,36 @@ app.get("/r",function(req,res){
        
         res.render("resultpage.ejs", {info:info}) ;
 
+
+
         //res.send(restaurants[index]);
 
         //name , image_url , is_closed , url(of the place) , rating , price , location-display_address , display_phone 
     })
 
 
-   
-    
 });
+
+var restaurants= [ ];
+
+app.post("/r", function(req,res){
+
+    //city = req.body.cityname;
+    //console.log(info);
+    //console.log(req.body);
+    restaurants.push(info);
+    //console.log(restaurants);
+
+    res.render("saved.ejs", {restaurants:restaurants});
+
+    //res.redirect("/r");
+    //console.log(city) ; 
+
+});
+
+
+
+
 var port = process.env.PORT || 1234;
 app.listen(port, function(){
     console.log("App has started!");
