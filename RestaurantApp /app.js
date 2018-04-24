@@ -71,7 +71,7 @@ app.get("/r",function(req,res){
 
            var open ;
 
-        if(is_closed==false)
+        if(is_closed==true)
         {
             open = "open" ;
         }
