@@ -3,6 +3,9 @@ var app = express();
 var request = require("request");
 var bodyParser = require("body-parser");
 
+var mongoose = require("mongoose") ; 
+mongoose.connect("mongodb://localhost/cs-trash") ;
+
 var city ;
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -105,22 +108,89 @@ app.get("/r",function(req,res){
 
 });
 
-var restaurants= [ ];
+//var restaurants= [ ];
+
+var RestaurantSchema = new mongoose.Schema({
+    nameOfRestaurant:String 
+}) ; 
+
+var Restaurant = mongoose.model("Restaurant" , RestaurantSchema) ;
 
 app.post("/r", function(req,res){
 
     //city = req.body.cityname;
-    //console.log(info);
+    //console.log(name);
     //console.log(req.body);
-    restaurants.push(info);
+  //  restaurants.push(info);
     //console.log(restaurants);
 
-    res.render("saved.ejs", {restaurants:restaurants});
+    /*var newRestaurant = new Restaurant({
+    nameofRestaurant: name 
+    }) ;
+
+    newRestaurant.save(function(err , Restaurant){
+    if(err){
+        console.log("Could not save to the database") ; 
+    }
+    else
+    {
+        console.log("Saved")  ;
+        console.log(Restaurant) ; 
+    }*/
+
+    Restaurant.create({
+        nameOfRestaurant: name
+
+    }, function(err,rest){
+        if (err) 
+        {
+            console.log("Could not save restaurant");
+
+        }
+        else{
+
+            console.log("Saved Restaurant: ");
+            console.log(rest);
+            Restaurant.find({},function(err  , listOfRestaurants){
+            if(err)
+            {
+                console.log("Could not print out the restaurants") ;
+            }
+            else
+            {
+                //console.log("List of restaurants: ");
+                //console.log(listOfRestaurants[1]) ; 
+
+                res.render("saved.ejs" , { listOfRestaurants : listOfRestaurants}) ;
+            }
+        });
+        
+
+       /* var propArray = [] ;
+        Restaurant.find().toArray(function(err, listOfRestaurants){
+            var i , count ;
+            for(i=0 , count = listOfRestaurants.length ; i<count ; i++)
+            {
+                propArray.push(new models.propertyModel(listOfRestaurants[i])) ;
+            }
+            var finallist = propArray; 
+            res.render("saved.ejs" , { finallist:finallist}) ;
+        })
+*/
+        }
+    });
+
+    
+
+       
+    
+
+    //res.render("saved.ejs", {restaurants:restaurants});
+
+}) ;
 
     //res.redirect("/r");
     //console.log(city) ; 
-
-});
 
 
 
