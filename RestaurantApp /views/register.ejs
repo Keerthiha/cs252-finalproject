@@ -6,6 +6,12 @@
        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheets/main.css">
+        <style type="text/css">
+          a{
+            font-family : "Papyrus" ;
+            font-size: 20px ;
+          }
+        </style>
     </head>
     <body>
     <nav class="navbar navbar-default">
@@ -30,20 +36,68 @@
 
 
 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body, html
+ {
+    height: 100%;
+    margin: 0;
+    background-image: url("http://thedietfactory.net/wp-content/uploads/2013/02/gourmetfood.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+        font-family: "Copperplate" ; 
+        font-size: 85px ; 
+    }
+
+.bg {
+    /* The image used */
+    background-image: url("http://thedietfactory.net/wp-content/uploads/2013/02/gourmetfood.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 
+</style>
+</head>
+<body>
+
+<!--div class="bg"></div-->
+
+<section class="container">
+    <div class="login">
+      <center><h1 style="color:white">Create an Account</h1></center>
+      <br>
+      <br>      
+    <center>
+        <form  action="/register" method= "POST">
+
+        <input type="text" name="username" placeholder="username">
+        <br>
+        <br>
+        <input type="password" name="password" placeholder="password">
+        <br>
+        <br>
+        <button style="background-color:Snow ; font-size: 20px ; font-family: Papyrus">Sign up</button>
+
+      </form>
+  </center>
+
+    </div>
+  </section>
+
+</body>
+</html>
 
 
-
-<h1>Sign Up!</h1>
-
-
-<form action="/register" method= "POST">
-
-	<input type="text" name="username" placeholder="username">
-	<br>
-	<input type="password" name="password" placeholder="password">
-
-	<button>Submit</button>
-
-</form>

@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>GenereatedResult</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheets/main.css">
+        <style type="text/css">
+          a{
+            font-family : "Papyrus" ;
+            font-size: 20px ;
+          }
+        </style>
     </head>
     <body>
     <nav class="navbar navbar-default">
@@ -28,36 +35,48 @@
     </nav>
 
 
+<style>
+h1
+{
+        font-family:"Papyrus" ;
+        font-size: 35px ;
+}
 
+h2
+{
+        font-family:"Papyrus" ;
+        font-size: 65px ;
+}
+h3
+{
+        font-family: "Papyrus" ;
+        font-size: 25px ;
+}
 
+body {
+    background-color: #E0FFFF;
+}
 
- <h1>Result</h1>
+</style>
 
+<h1>What about<img src=<%= info[1]%> alt = <%= info[1]%> style="width:350px;height:400px;" align="right"></h1>
 
-<body>
-<p> Name : <%= info[0]%></p>
+<h2><a style= "font-size: 65px" href=<%= info[3]%>><%= info[0]%>?</a></h2>
 
-<img src=<%= info[1]%> alt = <%= info[1]%> style="width:500px;height:600px;">
+<h3> Rating : <%= info[4]%></h3>
 
-<p> Status : <%= info[2]%></p>
+<h3> Price : <%= info[5]%></h3>
 
-<a href=<%= info[3]%>>Visit the website</a>
+<h3>The address of the restaurant : <%= info[6]%></h3>
 
-<p> Rating : <%= info[4]%></p>
+<h3> Phone Number : <%= info[7]%></h3>
 
-<p> Price : <%= info[5]%></p>
-
-<p> Location : <%= info[6]%></p>
-
-<p> Phone Number : <%= info[7]%></p>
 
 <form action:"/save", method = "POST">
 
-	
-	<button>SAVE THIS RESTAURANT PLZ</button>
 
+        <center><button align="bottom" style="background-color:Snow ; font-size: 20px ; font-family: Papyrus">Add to favourites</button></center>
 
 </form>
-
-
 </body>
+</html>

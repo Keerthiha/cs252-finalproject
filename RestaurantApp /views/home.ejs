@@ -4,6 +4,12 @@
         <title>HomePage</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheets/main.css">
+        <style type="text/css">
+          a{
+            font-family : "Papyrus" ;
+            font-size: 20px ;
+          }
+        </style>
     </head>
     <body>
     <nav class="navbar navbar-default">
@@ -27,23 +33,77 @@
     </nav>
 
 
+<style>
+h1
+{
+        font-family: "Big Caslon" ;
+        font-size: 75px ;
+}
 
+h2
+{
+        font-family: "Lucida Bright" ;
+        font-size: 30px ;
+}
 
+h3
+{
+        font-family: "Papyrus" ;
+        font-size: 25px ;
+}
 
+h4
+{
+        font-family: "Papyrus" ;
+        font-size: 15px ;
+}
 
+p.a 
+{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
 
-<form action:"/search", method = "POST">
+body, html
+ {
+    height: 100%;
+    margin: 0;
+    background-image: url("w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-	<input type="text" name = "cityname" placeholder="city">
-	<button>GIVE ME A RESTAURANT</button>
+</style>
 
+<head>
+<!--Heading -->
+<header>
+<!-- img src= "https://recipes.timesofindia.com/photo/54659021.cms" alt="Plz Halp" width="600" height="500"-->
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity" style="background-color:Black">
+    <h1 class="a" style="color:white"> I Don't Mind</h1>
+    <h3 style="color:white">Random Restaurant Finder</h3>
+    <h4 style="color:white"> Can't decide on a place to eat? We got you! </h4>
+  </div>
+</header>
+</head>
+
+<!-- Page content -->
+<!-- div class="w3-content" style="max-width:1100px" -->
+
+<body background="https://recipes.timesofindia.com/photo/54659021.cms">
+
+<div class="w3-col l6 w3-padding-large">
+<center><h2>Please enter the name of the city </h2></center><br>
+
+        <enter><form action:"/search", method = "POST">
+        <center><input type="text" name = "cityname" placeholder="city">
+        <button class="w3-button w3-light-grey w3-section" style="background-color:Snow ; font-size: 10px ; font-family: Papyrus">GIVE ME A RESTAURANT</button></center>
+</div>
 
 </form>
+</body>
+</html>
 
 
 
 
-
-
-<p1> This is the home page </p1>
 
