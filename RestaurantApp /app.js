@@ -36,7 +36,8 @@ app.use(function(req,res,next){
 
 
 //Connecting to Database
-mongoose.connect("mongodb://localhost/cs-trash") ;
+//mongoose.connect("mongodb://localhost/cs-trash") ;
+mongoose.connect("mongodb://lkannan:OOEHS2016!@ds157639.mlab.com:57639/apprestdata") ;
 
 
 
